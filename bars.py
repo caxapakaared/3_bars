@@ -36,7 +36,6 @@ def get_closest_bar(data, longitude, latitude):
 		if distance < min_distance:
 			min_distance = distance
 			name = i['Name']
-			print(x, y, min_distance) 
 	return name
 
 
@@ -44,7 +43,7 @@ if __name__ == '__main__':
 	data = load_data('data-2897-2016-11-23.json')
 	print('Самый большой бар -', get_biggest_bar(data))
 	print('Самый маленький бар -',get_smallest_bar(data))
-	print('Введите Вашу долготу и ширину через пробел')
+	print('Введите широту и долготу через пробел')
 	
 	while True:
 		try:
@@ -53,6 +52,4 @@ if __name__ == '__main__':
 		except ValueError:
 			print('Что-то пошло не так, попробуйте еще раз')
 
-	print('Ближайший к вам бар - ', get_closest_bar(data, longitude, latitude))
-
-
+	print('Ближайший бар - ', get_closest_bar(data, longitude, latitude))
