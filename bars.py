@@ -40,9 +40,9 @@ def get_closest_bar(data, longitude, latitude):
 
 
 if __name__ == '__main__':
-    data = load_data('data-2897-2016-11-23.json')
-    print('Самый большой бар -', get_biggest_bar(data))
-    print('Самый маленький бар -',get_smallest_bar(data))
+    json_content = load_data('data-2897-2016-11-23.json')
+    print('Самый большой бар -', get_biggest_bar(json_content))
+    print('Самый маленький бар -',get_smallest_bar(json_content))
     print('Введите широту и долготу через пробел')
 
     while True:
@@ -52,4 +52,4 @@ if __name__ == '__main__':
         except ValueError:
             print('Что-то пошло не так, попробуйте еще раз')
 
-    print('Ближайший бар -', get_closest_bar(data, longitude, latitude))
+    print('Ближайший бар -', get_closest_bar(json_content, longitude, latitude))
